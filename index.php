@@ -6,27 +6,6 @@
     <title>ThemeConf Workshop - Session 2</title>
 
 	<?php wp_head(); ?>
-
-	<style>
-		h1 {
-			margin-top: 0;
-		}
-
-		img,
-		.wp-caption {
-			max-width: 100%;
-		}
-
-		#new-post {
-			margin-bottom: 15px;
-		}
-
-		.post-title,
-		.post-content {
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-		}
-	</style>
 </head>
 <body>
 

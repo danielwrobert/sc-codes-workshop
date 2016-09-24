@@ -9,7 +9,8 @@
  * Enqueue Styles & Scripts
  */
 function theme_enqueue_styles() {
-	wp_enqueue_style( 'rest-api-theme-style', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+	wp_enqueue_style( 'rest-api-bootstrap-styles', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+	wp_enqueue_style( 'rest-api-theme-styles', get_stylesheet_uri() );
 
 	wp_enqueue_script(
 		'rest-api-theme-style',
