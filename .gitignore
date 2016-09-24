@@ -1,3 +1,4 @@
+# WordPress Ignores
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -16,3 +17,5 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+# Node Ignores
+node_modules/
