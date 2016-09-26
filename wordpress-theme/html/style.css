@@ -1,0 +1,31 @@
+/* Images */
+img {
+	max-width: 100%;
+}
+#content img {
+	margin: 0;
+	height: auto;
+	width: auto;
+}
+#content .alignleft,
+#content img.alignleft {
+	float: left;
+	margin: 4px 4% 4px 0;
+}
+#content .alignright,
+#content img.alignright {
+	float: right;
+	margin: 4px 0 4px 4%;
+}
+#content .aligncenter,
+#content img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#content img.alignleft,
+#content img.alignright,
+#content img.aligncenter {
+	margin-bottom: 12px;
+}
