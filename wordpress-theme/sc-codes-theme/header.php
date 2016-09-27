@@ -1,37 +1,47 @@
+<?php
+/**
+ * The header for our theme.
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ */
+?>
+
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>SC Codes Theme</title>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<header role="banner">
-			<div class="site-name half left"><!-- site name and description  --></div>
-			<div class="site-name half left">
-				<h1 class="one-half-left" id="site-title">
-					<a title="Creating a WordPress theme from static html - home" rel="home">WordPress Theme Building</a>
-				</h1>
-				<h2 id="site-description">Creating a WordPress theme from static html</h2>
-			</div>
-			 <!-- an aside in the header - this will be populated via a widget area later -->
-			<aside class="header widget-area half right" role="complementary">
-				<div class="widget-container">This will be a widget area in the header - address details (or anything else you like) goes here</div><!-- .widget-container -->
-			</aside><!-- .half right -->
-		</header><!-- header -->
+<?php wp_head(); ?>
+</head>
 
-		<!-- full width navigation menu - delete nav element if using top navigation -->
-		<nav class="menu main"><?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-			<div class="skip-link screen-reader-text"><a title="Skip to content" href="#content">Skip to content</a></div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Latest news</a></li>
-				<li><a href="#">Featured articles</a></li>
-			</ul>
-		</nav><!-- .main -->
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-		<div class="main">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<?php
+			if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+			endif;
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+			endif; ?>
+		</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">

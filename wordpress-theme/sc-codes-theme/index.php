@@ -1,21 +1,45 @@
-			<div class="two-thirds" id="content">
-				<article class="post" id="post-01">
-					<h2 class="entry-title">This is the title of a post or page</h2>
-					<img class="size-large" alt="" src="images/featured-image.jpg" />
-					<section class="entry-meta">
-						<p>Posted on 5 November by Dan Robert</p>
-					</section><!-- .entry-meta -->
-					<section class="entry-content">
-						<p>This is the content of the post. On an archive page it might be an excerpt of the post or you might include the entire content.</p>
-						<h3>Images in WordPress</h3>
-						<img class="alignright" alt="" src="images/another-image.jpg" />
-						<p>This post has some images included - once you've converted this html to a WordPress theme you'll be able to get WordPress to handle images for you and life will be so much easier!</p>
-			 
-						<p>It also has a featured image - again, WordPress will handle these for you and you'll never go back to static html again. You'll learn how to add support for featured images to your theme in Part 10 of this series. You can use them to automatically display images in your individual posts and pages and in archive pages, you'll learn how to set up a custom archive page in Part 11.</p>
-					</section><!-- .entry-content -->
-					<section class="entry-meta">
-						<h3>Post Categories and Tags</h3>
-						<p>In this section you can display information about the categories and tags associated with your post, you'll learn how to do this using WordPress template tags in Part 4 of this series.</p>
-					</section><!-- .entry-meta -->
-				</article><!-- #post-01-->
-			</div><!-- #content-->
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ */
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php
+		if ( have_posts() ) :
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+
+			<?php
+			endif;
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
+			endwhile;
+			the_posts_navigation();
+		else :
+			get_template_part( 'template-parts/content', 'none' );
+		endif; ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();
