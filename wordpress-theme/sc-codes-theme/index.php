@@ -15,27 +15,45 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) :
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+		if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php
+					if ( is_single() ) :
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					else :
+						the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h2>' );
+					endif;
+					if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-meta">
+						<p>Posted on <?php the_date(); ?> by <?php the_author(); ?>.</p>
+						<?php
+							//echo sprintf( esc_html_x( 'Posted on: %1$s by %2$s', 'sc_codes' ), the_date(), the_author() );
+						?>
+					</div><!-- .entry-meta -->
+					<?php
+					endif; ?>
+				</header><!-- .entry-header -->
 
-			<?php
-			endif;
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile;
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div><!-- .entry-content -->
+
+				<footer class="entry-footer">
+					<h4>Categories</h4>
+					<?php //echo esc_html__( '<h4>Categories</h4>', 'sc_codes' ); ?>
+					<?php echo get_the_category_list(); ?>
+				</footer><!-- .entry-footer -->
+			</article><!-- #post-## -->
+		<?php endwhile;
 			the_posts_navigation();
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif; ?>
+		else : ?>
+			<div class="page-content">
+				<h2>Nothing Found</h2>
+				<p>It seems we can't find what you're looking for. Perhaps searching can help:</p>
+				<?php get_search_form(); ?>
+			</div>
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

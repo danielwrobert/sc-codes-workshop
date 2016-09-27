@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sc_codes' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'sc_codes' ), 'WordPress' ); ?></a>
+			<a href="https://wordpress.org/">Proudly powered by WordPress</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
