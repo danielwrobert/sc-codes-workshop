@@ -1,0 +1,20 @@
+/*
+Theme Name: SC Codes Child Theme
+Theme URI: http://underscores.me/
+Author: Dan Robert
+Author URI: http://danielwrobert.com
+Template: sc-codes-theme
+Description: WordPress theme example for the SC Codes workshop
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sc-codes-child
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {
+	background-color: #999;
+}

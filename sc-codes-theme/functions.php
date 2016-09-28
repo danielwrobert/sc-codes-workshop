@@ -91,6 +91,7 @@ add_action( 'widgets_init', 'sc_codes_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sc_codes_scripts() {
+	wp_enqueue_style( 'sc-codes-bootstrap-styles', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'sc_codes-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'sc_codes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'sc_codes-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
