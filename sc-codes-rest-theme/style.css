@@ -19,8 +19,8 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-h1 {
-	margin-top: 0;
+.site-header {
+	margin-bottom: 25px;
 }
 
 img,

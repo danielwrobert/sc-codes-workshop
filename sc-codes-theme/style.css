@@ -16,6 +16,30 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 /*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+.site-content {
+	margin-bottom: 25px;
+}
+
+.post .entry-content {
+	margin-bottom: 25px;
+}
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+.posts-navigation {
+	margin: 45px 0 25;
+}
+.posts-navigation .nav-previous {
+	float: left;
+}
+.posts-navigation .nav-next {
+	float: right;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -83,6 +107,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
+.nav-links:after,
+.nav-links:before,
 .site-header:before,
 .site-header:after,
 .site-content:before,

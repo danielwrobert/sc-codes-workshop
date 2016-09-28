@@ -24,13 +24,8 @@
 
 	<header id="masthead" class="container-fluid site-header" role="banner">
 		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<?php else : ?>
-				<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php
-			endif;
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
@@ -38,9 +33,14 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+		<nav id="site-navigation" class="main-navigation navbar navbar-default" role="navigation">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id' => 'primary-menu',
+				'menu_class' => 'nav navbar-nav',
+				'container' => ''
+			) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="container site-content">
+	<div id="content" class="container-fluid site-content">

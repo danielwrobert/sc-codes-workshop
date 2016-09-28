@@ -79,8 +79,9 @@ function sc_codes_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'sc_codes' ),
 		'id'            => 'sidebar-1',
+		'class'         => 'list-group',
 		'description'   => esc_html__( 'Add widgets here.', 'sc_codes' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget list-group-item %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',

@@ -20,7 +20,7 @@ var getData = function( url ) {
 };
 
 var outputPosts = function( posts ) {
-	var container = document.getElementById( 'content' );
+	var container = document.getElementById( 'post-content' );
 	var postContent = '';
 
 	posts.map( function( post ) {

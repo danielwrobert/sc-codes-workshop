@@ -11,7 +11,7 @@
  */
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area col-sm-7">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -38,12 +38,6 @@ get_header(); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div><!-- .entry-content -->
-
-				<footer class="entry-footer">
-					<h4>Categories</h4>
-					<?php //echo esc_html__( '<h4>Categories</h4>', 'sc_codes' ); ?>
-					<?php echo get_the_category_list(); ?>
-				</footer><!-- .entry-footer -->
 			</article><!-- #post-## -->
 		<?php endwhile;
 			the_posts_navigation();
