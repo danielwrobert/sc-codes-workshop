@@ -29,7 +29,7 @@ A very simple demo theme using the WP-API.
 
 **Requirements:**
 - [WP-API plugin](https://wordpress.org/plugins/rest-api/)
-- [WP Basic Auth Plugin](https://github.com/WP-API/Basic-Auth) (Only if authentication is needed. Not used in this demo.)
+- [WP Basic Auth Plugin](https://github.com/WP-API/Basic-Auth) (Only if authentication is needed. Not used in this demo. Not meant for production!)
 
 
 ### Slides
