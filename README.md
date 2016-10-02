@@ -56,6 +56,6 @@ A very simple demo theme using the WP-API.
 - [WP Basic Auth Plugin](https://github.com/WP-API/Basic-Auth) (Only if authentication is needed. Not used in this demo. Not meant for production!)
 
 
-### Slides
+## Workshop Slides
 
 [https://speakerdeck.com/danielwrobert/wordpress-sc-codes-workshop](https://speakerdeck.com/danielwrobert/wordpress-sc-codes-workshop)
