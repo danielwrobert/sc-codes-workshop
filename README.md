@@ -21,7 +21,7 @@ You can read more about getting started with WordPress on [this handy guide in t
 
 Once you have a local WordPress installation up and running, you can install the themes from this repository in one of two ways:
 
-The first method would be to upload the theme folders (_not_ the `html` folder) to the **wp-content/themes/** directory in your local installation.
+The first method would be to upload the theme folders (_not_ the `html` folder) to the `wp-content/themes/` directory in your local installation.
 Alternatively, you can also install a theme via the WordPress Admin dashboard from the **Themes -> Install Themes** section. From there, click on the Upload link at the top of the page. Then, click the **Choose File** button, select the archive of your theme from your local computer and press the **Install Now** button.
 
 
