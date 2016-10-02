@@ -9,7 +9,7 @@ You are free to use the code here as you see fitl. Please note, however, that th
 
 ## Getting Started
 
-If you're new to WordPress, there are a couple options to getting a local development environment up and running. The easiest way to get started would be to install a software stack, such as MAMP or WAMP. The WordPress Codex has a [detailed walkthrough](https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP) on how to get up and running wiht that.
+If you're new to WordPress, there are a couple options to getting a local development environment up and running. The easiest way to get started would be to install a software stack, such as MAMP or WAMP. The WordPress Codex has a [detailed walkthrough](https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP) on how to get up and running.
 
 Alternatively, you can take the route of a virtual development environment, using Vagrant. VVV is a popular Vagrant configuration for WordPress development. Note that this route may require a little bit more development warewithall to get up and running than something like MAMP would. That said, there is a [helpful guide](https://make.wordpress.org/core/handbook/tutorials/installing-a-local-server/installing-vvv/) in the WordPress.org development documentation for this as well.
 
