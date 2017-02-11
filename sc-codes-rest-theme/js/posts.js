@@ -34,14 +34,14 @@ var outputPosts = function( posts ) {
 	container.innerHTML = postContent;
 };
 
-getData( '/wp-json/wp/v2/posts/?filter[orderby]=rand&filter[posts_per_page]=1' )
+getData( '/wp-json/wp/v2/posts/?per_page=1' )
 	.then( outputPosts )
 	.catch( function( e ) {
 		console.log( e );
 	} );
 
 document.getElementById( 'new-post' ).addEventListener( 'click', function() {
-	getData( '/wp-json/wp/v2/posts/?filter[orderby]=rand&filter[posts_per_page]=1' )
+	getData( '/wp-json/wp/v2/posts/?per_page=1' )
 		.then( outputPosts )
 		.catch( function( e ) {
 			console.log( e );
