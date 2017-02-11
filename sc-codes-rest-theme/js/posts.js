@@ -1,3 +1,5 @@
+var pageCounter = 1;
+
 var getData = function( url ) {
 	return new Promise( function( resolve, reject ) {
 		var xhr = new XMLHttpRequest();
@@ -41,7 +43,10 @@ getData( '/wp-json/wp/v2/posts/?per_page=1' )
 	} );
 
 document.getElementById( 'new-post' ).addEventListener( 'click', function() {
-	getData( '/wp-json/wp/v2/posts/?per_page=1' )
+	if ( pageCounter <= 35 ) {
+		pageCounter++;
+	}
+	getData( '/wp-json/wp/v2/posts/?per_page=1&page=' + pageCounter )
 		.then( outputPosts )
 		.catch( function( e ) {
 			console.log( e );
