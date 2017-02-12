@@ -20,7 +20,10 @@
 		</header><!-- header -->
 
 		<div id="content" class="container-fluid site-content">
-			<button id="new-post" type="button" class="btn btn-primary">NEW POST</button>
+			<div class="button-group" role="group">
+				<button id="prev-post" type="button" class="btn btn-primary">NEW POST</button>
+				<button id="next-post" type="button" class="btn btn-primary">NEW POST</button>
+			</div>
 			<div class="row">
 				<div id="primary" class="content-area col-sm-7">
 					<div id="post-content" class="post list-group"></div>
